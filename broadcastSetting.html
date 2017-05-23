@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <title>推播設定</title>
+
+    <link rel="stylesheet" href="css/index.css">
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+
+    <script src="scripts/jquery-1.8.0.min.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/appBundle.js"></script>
+    <div data-role="page" id="broadcastSetting">
+        <div data-role="header" data-position="fixed">
+            <a href="home.html"><img type="button" src="images/back.png" style="width:30px;height:25px;" /></a>
+            <h1>推播設定</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <br />
+            <fieldset data-role="controlgroup">
+                <br />
+                <legend>1.您希望收到哪些推播訊息呢?(可多選):</legend>
+                <input type="checkbox" name="checkbox1" id="checkbox1" />
+                <label for="checkbox1">尾上若葉的新作番號</label>
+                <input type="checkbox" name="checkbox2" id="checkbox2" />
+                <label for="checkbox2">三上悠亞的寫真集</label>
+                <input type="checkbox" name="checkbox3" id="checkbox3" />
+                <label for="checkbox3">紗倉真菜的關懷簡訊</label>
+            </fieldset><br />
+            <fieldset data-role="controlgroup">
+                <br />
+                <legend>1.您需要哪些貼心提醒呢?(可多選):</legend>
+                <input type="checkbox" name="checkbox4" id="checkbox4" />
+                <label for="checkbox4">大槻響的最新IG貼文</label>
+                <input type="checkbox" name="checkbox5" id="checkbox5" />
+                <label for="checkbox5">定時用藥提醒</label>
+                <input type="checkbox" name="checkbox6" id="checkbox6" />
+                <label for="checkbox6">身體數值異常提醒</label>
+                <input type="checkbox" name="checkbox7" id="checkbox7" />
+                <label for="checkbox7">星野娜美的手動排毒服務</label>
+            </fieldset>
+            <div data-role="popup" id="alert3" data-close-btn="right">
+                <div data-role="header">
+                    <h1>修改設定</h1>
+                </div>
+                <div role="main" class="ui-content">
+                    <p>確定修改目前推播設定?</p>
+                    <a href="#broadcastSetting" class="ui-btn">確認</a>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#alert3" data-rel="popup" data-position-to="window" 
+                           data-transition="fade">
+                            <p>更新設定</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

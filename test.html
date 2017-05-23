@@ -1,0 +1,468 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta charset="utf-8" />
+
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+
+    <title>jQuery Mobile 常用元件</title>
+
+    <link href="css/index.css" rel="stylesheet" />
+
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css" />
+
+    <script src="scripts/jquery-1.8.0.min.js" type="text/javascript"></script>
+
+    <script src="scripts/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+
+    <title></title>
+    <style>
+        .p {
+            font-family: 微軟正黑體;
+        }
+
+        .double {
+            border-style: double;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script type="text/javascript" src="cordova.js"></script>
+
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+
+    <script type="text/javascript" src="scripts/index.js"></script>
+
+    <div data-role="page" id="home">
+
+        <div data-role="header" style="background-color:">
+
+            <a href="home.html">返回</a>
+
+            <h1 style="font-family:微軟正黑體;font-size:16px">長照自我評估測驗</h1>
+
+            <a href="#">說明</a>
+
+        </div>
+
+        <div role="main" class="ui-content" style="text-align:center">
+
+            <a href="#page2" class="ui-btn">自我評估測驗</a>
+
+            <a href="#page6" class="ui-btn">查詢測驗結果</a>
+
+            <a href="#page8" data-role="button">長照資源網站連結</a>
+
+
+
+
+        </div>
+
+        <div data-role="footer">
+
+        </div>
+
+    </div>
+
+    <!--第二頁-->
+
+    <div data-role="page" id="page5">
+
+        <div data-role="header" data-add-back-btn="true">
+
+            <h1 style="font-family:微軟正黑體;font-size:16px">自我評估測驗</h1>
+
+        </div>
+
+        <div role="main" class="ui-content">
+
+
+
+        </div>
+
+    </div>
+
+    <!--個資說明-->
+
+    <div data-role="page" id="page2">
+
+        <div data-role="header" data-add-back-btn="true">
+
+            <h1 style="font-family:微軟正黑體;font-size:20px">HomeCare</h1>
+
+        </div>
+
+        <div role="main" class="ui-content">
+
+            <h1 style="font-family:微軟正黑體">個資聲明</h1><br />
+
+            <p>
+
+                高雄市政府衛生局為保護您的個人資料，依據個人資料保護法規定，於下列事由與目的範圍內，直接或間接蒐集、處理及利用您的個人資料，當您完成填表時，表示您同意以下內容:
+
+            </p>
+
+            <br />
+
+            <p>蒐集之目的:基於個人資料保護法及相關法令之規定，取得您的個人資料，目的在於提供良好服務及執行職務或業務之必要範圍內蒐集、處理及利用您的個人資料。您同意本局以您所提供的個人資料確認您的身分、與您進行連絡、提供您本案之相關服務及資訊。</p>
+
+            <br />
+
+            <p>個人資料之類別:依據填需求提供您的個人資料，包含姓名、連絡方式、E-MAIL等。</p>
+
+        </div>
+
+        <div data-role="footer" class="ui-btn">
+
+            <div>
+
+                <input type="checkbox" id="subscribeNews" name="subscribe" value="newsletter">
+
+                <label for="subscribeNews">我已經詳細閱讀並且同意[個人資料保護說明]</label>
+
+            </div>
+
+            <div>
+
+                <a href="#page3" class="ui-btn" style="width:100%;color:chartreuse">送出</a>
+
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!---長照評估選擇--->
+
+    <div data-role="page" id="page3">
+
+        <div data-role="header" style="background-color:">
+
+            <a href="#home">返回</a>
+
+            <h1 style="font-family:微軟正黑體;font-size:20px">自我評估測驗</h1>
+
+            <a href="#">說明</a>
+
+        </div>
+
+        <div role="main" class="ui-content">
+
+            <a href="#page7" class="ui-btn">ADL量表</a>
+
+            <a href="#" class="ui-btn">GDS量表</a>
+
+            <a href="#" data-role="button">IADL量表</a>
+
+            <a href="#AD8" class="ui-btn">AD8量表</a>
+
+        </div>
+
+        <div data-role="footer">
+
+        </div>
+
+    </div>
+
+    <!---查詢測驗結果--->
+
+    <div data-role="page" id="page6">
+
+        <div data-role="header" style="background-color:">
+
+            <a href="#home">返回</a>
+
+            <h1 style="font-family:微軟正黑體;font-size:20px">查詢測驗結果</h1>
+
+            <a href="">說明</a>
+        </div>
+        <div role="main" class="ui-content">
+
+            <table style="margin:auto;width:100%;height:500px;">
+                <tr>
+                    <td style="border:1px solid lightgray;">
+                        <p>ADL最新測驗結果</p>
+                        <br />
+                        <p>測驗結果:(抓資料)</p>
+                        <p>測驗日期:(抓資料)</p>
+                    </td>
+                    <td style="border:1px solid lightgray;">
+                        <p>GDS最新測驗結果</p>
+                        <br />
+                        <p>測驗結果:(抓資料)</p>
+                        <p>測驗日期:(抓資料)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid lightgray;">
+                        <p>LDL最新測驗結果</p>
+                        <br />
+                        <p>測驗結果:(抓資料)</p>
+                        <p>測驗日期:(抓資料)</p>
+                    </td>
+                    <td style="border:1px solid lightgray;">
+                        <p>AD8最新測驗結果</p>
+                        <br />
+                        <p>測驗結果:(抓資料)</p>
+                        <p>測驗日期:(抓資料)</p>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+    <
+    <!-------ADL------->
+
+    <div data-role="page" id="page7">
+        <div data-role="header" style="background-color:">
+            <a href="#page3">返回</a>
+            <h1 style="font-family:微軟正黑體;font-size:20px">ADL量表測驗</h1>
+        </div>
+       
+            <table class="table table-striped; double">
+                <tr>
+                    <td>
+                        基本日常生活活動能力（ADL）
+                    </td>
+                    <td>
+                        10分:
+                        不需協助
+                    </td>
+                    <td>
+                        5分:
+                        需協助
+                    </td>
+                    <td>
+                        0分:
+                        需協助
+                    </td>
+                </tr>
+                <tr>
+                    <td>1.進食</td>
+                    <td><input id="ADL1" type="radio" name="n1" value="10" checked="checked" /></td>
+                    <td><input id="ADL1" type="radio" name="n1" value="5" /></td>
+                    <td><input id="ADL1" type="radio" name="n1" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>2.移位</td>
+                    <td><input id="ADL2" type="radio" name="n2" value="10" checked="checked" /></td>
+                    <td><input id="ADL2" type="radio" name="n2" value="5" /></td>
+                    <td><input id="ADL2" type="radio" name="n2" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>3.如廁</td>
+                    <td><input id="ADL3" type="radio" name="n3" value="10" checked="checked" /></td>
+                    <td><input id="ADL3" type="radio" name="n3" value="5" /></td>
+                    <td><input id="ADL3" type="radio" name="n3" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>4.洗澡</td>
+                    <td><input id="ADL4" type="radio" name="n4" value="10" checked="checked" /></td>
+                    <td><input id="ADL4" type="radio" name="n4" value="5" /></td>
+                    <td><input id="ADL4" type="radio" name="n4" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>5.平地走動</td>
+                    <td><input id="ADL5" type="radio" name="n5" value="10" checked="checked" /></td>
+                    <td><input id="ADL5" type="radio" name="n5" value="5" /></td>
+                    <td><input id="ADL5" type="radio" name="n5" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>6.穿脫衣褲鞋襪</td>
+                    <td><input id="ADL6" type="radio" name="n6" value="10" checked="checked" /></td>
+                    <td><input id="ADL6" type="radio" name="n6" value="5" /></td>
+                    <td><input id="ADL6" type="radio" name="n6" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>7.個人衛生</td>
+                    <td><input id="ADL7" type="radio" name="n7" value="10" checked="checked" /></td>
+                    <td><input id="ADL7" type="radio" name="n7" value="5" /></td>
+                    <td><input id="ADL7" type="radio" name="n7" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>8.上下樓梯</td>
+                    <td><input id="ADL8" type="radio" name="n8" value="10" checked="checked" /></td>
+                    <td><input id="ADL8" type="radio" name="n8" value="5" /></td>
+                    <td><input id="ADL8" type="radio" name="n8" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>9.大便控制</td>
+                    <td><input id="ADL9" type="radio" name="n9" value="10" checked="checked" /></td>
+                    <td><input id="ADL9" type="radio" name="n9" value="5" /></td>
+                    <td><input id="ADL9" type="radio" name="n9" value="0" /></td>
+                </tr>
+               <tr>
+                    <td>10.小便控制</td>
+                    <td><input id="ADL10" type="radio" name="n10" value="10" checked="checked" /></td>
+                    <td><input id="ADL10" type="radio" name="n10" value="5" /></td>
+                    <td><input id="ADL10" type="radio" name="n10" value="0" /></td>
+                </tr>
+            </table>
+       
+        <button type="button" class="btn btn-success center-block" onclick="count();" value="submit">送出</button>
+    </div>
+    <!---------AD8-->
+
+    <div data-role="page" id="AD8">
+        <div data-role="header" style="background-color:">
+
+            <a href="#page3">返回</a>
+
+            <h1 style="font-family:微軟正黑體;font-size:20px">AD8量表測驗</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <h4>你認為在過去的幾年中有因為認知功能(思考和記憶)問題而導致的改變。請填「是，有改變」。若無，請填「不是，沒有改變」；若不確定，請填「不知道」。</h4>
+            <fieldset data-role="controlgroup">
+                <legend>1.你對活動和嗜好的興趣降低。</legend>
+                <input type="radio" name="radio-select1" id="radio-4" value="1"
+                       checked="">
+                <label for="radio-4">是，有改變</label>
+                <input type="radio" name="radio-select1" id="radio-5" value="2">
+                <label for="radio-5">不是，沒有改變</label>
+                <input type="radio" name="radio-select1" id="radio-6" value="3">
+                <label for="radio-6">不知道</label>
+            </fieldset>
+            <fieldset data-role="controlgroup">
+                <legend>2.判斷力上的困難: 例如落入圈套或騙局、財務上不好的決定、買了對受禮者不合宜的禮物。</legend>
+                <input type="radio" name="radio-select" id="radio-1" value="1"
+                       checked="">
+                <label for="radio-1">是，有改變</label>
+                <input type="radio" name="radio-select" id="radio-2" value="2">
+                <label for="radio-2">不是，沒有改變</label>
+                <input type="radio" name="radio-select" id="radio-3" value="3">
+                <label for="radio-3">不知道</label>
+            </fieldset>
+            <fieldset data-role="controlgroup">
+                <legend>3.重複相同的問題、故事和陳述。</legend>
+                <input type="radio" name="radio-select2" id="radio-7" value="1"
+                       checked="">
+                <label for="radio-7">是，有改變</label>
+                <input type="radio" name="radio-select2" id="radio-8" value="2">
+                <label for="radio-8">不是，沒有改變</label>
+                <input type="radio" name="radio-select2" id="radio-9" value="3">
+                <label for="radio-9">不知道</label>
+            </fieldset>
+            <fieldset data-role="controlgroup">
+                <legend>4.在學習如何使用工具、設備、和小器具上有困難。例如: 電視、音響、冷氣機、洗衣機、熱水爐(器)、微波爐、遙控器。</legend>
+                <input type="radio" name="radio-select3" id="radio-10" value="1"
+                       checked="">
+                <label for="radio-10">是，有改變</label>
+                <input type="radio" name="radio-select3" id="radio-11" value="2">
+                <label for="radio-11">不是，沒有改變</label>
+                <input type="radio" name="radio-select3" id="radio-12" value="3">
+                <label for="radio-12">不知道</label>
+            </fieldset>
+            <fieldset data-role="controlgroup">
+                <legend>5.忘記正確的月份和年份。</legend>
+                <input type="radio" name="radio-select4" id="radio-13" value="1"
+                       checked="">
+                <label for="radio-13">是，有改變</label>
+                <input type="radio" name="radio-select4" id="radio-14" value="2">
+                <label for="radio-14">不是，沒有改變</label>
+                <input type="radio" name="radio-select4" id="radio-15" value="3">
+                <label for="radio-15">不知道</label>
+            </fieldset>
+            <fieldset data-role="controlgroup">
+                <legend>6.處理複雜的財務上有困難。例如:個人或家庭的收支平衡、所得稅、繳費單。</legend>
+                <input type="radio" name="radio-select5" id="radio-16" value="1"
+                       checked="">
+                <label for="radio-16">是，有改變</label>
+                <input type="radio" name="radio-select5" id="radio-17" value="2">
+                <label for="radio-17">不是，沒有改變</label>
+                <input type="radio" name="radio-select5" id="radio-18" value="3">
+                <label for="radio-18">不知道</label>
+            </fieldset>
+            <fieldset data-role="controlgroup">
+                <legend>7.記住約會的時間有困難。</legend>
+                <input type="radio" name="radio-select6" id="radio-19" value="1"
+                       checked="">
+                <label for="radio-19">是，有改變</label>
+                <input type="radio" name="radio-select6" id="radio-20" value="2">
+                <label for="radio-20">不是，沒有改變</label>
+                <input type="radio" name="radio-select6" id="radio-21" value="3">
+                <label for="radio-21">不知道</label>
+            </fieldset>
+            <fieldset data-role="controlgroup">
+                <legend>8.有持續的思考和記憶方面的問題。</legend>
+                <input type="radio" name="radio-select7" id="radio-22" value="1"
+                       checked="">
+                <label for="radio-22">是，有改變</label>
+                <input type="radio" name="radio-select7" id="radio-23" value="2">
+                <label for="radio-23">不是，沒有改變</label>
+                <input type="radio" name="radio-select7" id="radio-24" value="3">
+                <label for="radio-24">不知道</label>
+            </fieldset>
+        </div>
+               
+          
+        
+
+
+    <input type="submit" value="送出" style="text-align:center" />
+       
+    </div>
+
+
+
+
+    
+    
+
+    <!-------長照資源網連結---->
+    <div data-role="page" id="page8">
+
+        <div data-role="header" style="background-color:">
+
+            <a href="#home">返回</a>
+
+            <h1 style="font-family:微軟正黑體;font-size:16px">長照相關網站連結</h1>
+
+
+
+        </div>
+
+        <div role="main" class="ui-content" style="font-family:微軟正黑體;position:absolute
+">
+            <div style="align-content:center">
+
+                <a href="http://themes.mohw.gov.tw/LTC/mp-201.html" class="ui-btn">衛服部長照政策專區</a>
+                <br />
+
+
+                <a href="http://www.ltcpa.org.tw/" class="ui-btn">台灣社團法人長期照護協會</a>
+                <br />
+
+
+                <a href="http://e-care.sfaa.gov.tw/MOI_HMP/HMPa001/begin.action" class="ui-btn">衛服部長照十年計劃</a>
+                <br />
+
+
+                <a href="http://ltcgis.mohw.gov.tw/Select/QueryResource.aspx" class="ui-btn">長照服務資源地理圖</a>
+
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h1>廣告</h1>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

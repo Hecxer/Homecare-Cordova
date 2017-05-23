@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>登入</title>
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css" />
+    <script src="scripts/jquery-1.8.0.min.js" type="text/javascript"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+    <script>
+        $(function () {
+            setTimeout(hideSplash, 2000);
+        });
+
+        function hideSplash() {
+            $.mobile.changePage("#home", "fade");
+        }
+    </script>
+    <style>
+        .logo {
+            margin-top: 0px;
+            margin-right: auto;
+            margin-bottom: 0px;
+            margin-left: 0px;
+
+        }
+        .center-button{
+            text-align:center;
+        }
+
+    </style>
+</head>
+<body>
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="scripts/index.js"></script>
+
+    <div data-role="page" id="welcome">
+        <div class="splash">
+            <img src="images/HC_logo2.png" style="width:100%; margin-top:50%"/>
+        </div>
+    </div>
+    <div data-role="page" id="home">
+
+        <div role="main" class="ui-content">
+
+            <div class="logo">
+                <p><img src="images/HC_logo.png" style="width:100%; height:auto" ></p>
+            </div>
+            <div class="center-button">
+                <a href="#popupLogin" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a"
+                   data-transition="pop" data-position-to="window">登入</a>
+                <a href="#register" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a"
+                   data-transition="slide" data-position-to="window">註冊</a>
+            </div>
+            <div data-role="popup" id="popupLogin" data-theme="a" data-overlay-theme="a" class="ui-corner-all">
+                <form>
+                    <div style="padding:10px 20px;">
+                        <h3>登入</h3>
+                        <label for="un" class="ui-hidden-accessible">帳號:</label>
+                        <input type="text" name="user" id="un" value="" placeholder="帳號" data-theme="a">
+                        <label for="pw" class="ui-hidden-accessible">密碼:</label>
+                        <input type="password" name="pass" id="pw" value="" placeholder="密碼" data-theme="a">
+                     
+                            <input type="checkbox" name="checkbox-mini-0" id="checkbox-mini-0" data-mini="true">
+                            <label for="checkbox-mini-0">記住我</label>
+                        
+                        <div class="center-button">
+                            <a href="home.html" data-ajax="false" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-btn-b  ">登入</a>
+                            <a href="index.html" data-ajax="false" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-btn-b  ">取消</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div data-role="page" id="register">
+        <div data-role="header" data-add-back-btn="true">
+            <h1>註冊帳號</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <form method="post" action="/action_page_post.php">
+                
+                    <label for="account">帳號</label>
+                    <input type="text" name="account" id="account">
+                    <label for="password">密碼</label>
+                    <input type="text" name="password" id="password">
+                    <label for="name">姓名</label>
+                    <input type="text" name="name" id="name">
+                    <label for="gender">性別</label>
+                    <select name="gender" id="day">
+                        <option value="male">男</option>
+                        <option value="female">女</option>
+                    </select>
+                    <label for="birthdate">生日</label>
+                    <input type="date" name="birthdate" id="date" value="">
+                    <label for="fname">血型</label>
+                    <select name="gender" id="day">
+                        <option value="a">A</option>
+                        <option value="b">B</option>
+                        <option value="ab">AB</option>
+                        <option value="o">O</option>
+                    </select>
+                
+                <button type="submit" value="submit">送出</button>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

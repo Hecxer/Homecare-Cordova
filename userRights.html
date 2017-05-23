@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <title>權限設定</title>
+
+    <link rel="stylesheet" href="css/index.css">
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+
+    <script src="scripts/jquery-1.9.1.min.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    
+</head>
+<body>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/appBundle.js"></script>
+    
+    <div data-role="page" id="UserRights1">
+        <div data-role="header" data-position="fixed" data-id="main">
+            <img type="button" src="images/back.png" style="width:40px;position:absolute;left:15px;" />
+            <h1>權限設定</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#UserRights1" class="ui-btn-active ui-state-persist">您照顧的人</a></li>
+                    <li><a href="#UserRights2" id="UserRights2">照顧您的人</a></li>
+                </ul>
+            </div>
+        </div>
+        <div role="main" class="ui-content">
+            <br />
+            <h1>目前與您連接的用戶一共10位</h1>
+            <br />
+            <hr /><br />
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <a href="#" rel="external">
+                        <img style="width:80px;" src="images/user.png" class="ul-li-icon" />
+                        <h2>窩顆顆</h2><p>john54698</p>
+                    </a>
+                    <a href="#alert1" data-icon="delete" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <p>取消連接</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" rel="external">
+                        <img style="width:80px;" src="images/user.png" class="ul-li-icon" />
+                        <h2>窩窩頭</h2><p>julia56428</p>
+                    </a>
+                    <a href="#alert1" data-icon="delete" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <p>取消連接</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" rel="external">
+                        <img style="width:80px;" src="images/user.png" class="ul-li-icon" />
+                        <h2>三上悠亞</h2><p>Mary5566</p>
+                    </a>
+                    <a href="#alert1" data-icon="delete" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <p>取消連接</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" rel="external">
+                        <img style="width:80px;" src="images/user.png" class="ul-li-icon" />
+                        <h2>大槻響</h2><p>gagaLady19152</p>
+                    </a>
+                    <a href="#alert1" data-icon="delete" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <p>取消連接</p>
+                    </a>
+                </li>
+            </ul>
+            <div data-role="popup" id="alert1" data-close-btn="right">
+                <div data-role="header">
+                    <h1>取消連接</h1>
+                </div>
+                <div role="main" class="ui-content">
+                    <p>是否取消與窩窩頭的連接?</p>
+                    <a href="#UserRights1" class="ui-btn">確認</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-role="page" id="UserRights2">
+        <div data-role="header" data-position="fixed" data-add-back-btn="true" data-id="main">
+            <img type="button" src="images/back.png" style="width:40px;position:absolute;left:15px;" />
+            <h1>權限設定</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#UserRights1">您照顧的人</a></li>
+                    <li><a href="#UserRights2" class="ui-btn-active ui-state-persist">照顧您的人</a></li>
+                </ul>
+            </div>
+        </div>
+        <div role="main" class="ui-content">
+            45343434
+        </div>
+    </div>
+</body>
+</html>

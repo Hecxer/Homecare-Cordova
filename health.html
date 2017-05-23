@@ -1,0 +1,816 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Mobile 網路應用程式</title>
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css" />
+    <script src="scripts/jquery-1.8.0.min.js" type="text/javascript"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+    <style>
+        .ui-content a {
+            text-decoration: none;
+        }
+
+
+        .ui-body-a, .ui-page-theme-a .ui-body-inherit, html .ui-bar-a .ui-body-inherit, html .ui-body-a .ui-body-inherit, html body .ui-group-theme-a .ui-body-inherit, html .ui-panel-page-container-a {
+            width: 76%;
+        }
+
+        #h_article1 pre {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        #symptom_reference {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="scripts/index.js"></script>
+
+    <!--第1頁內容-->
+    <div data-role="page" id="health">
+        <div data-role="header">
+            <a href="home.html">返回</a>
+            <h1>健康新知</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#h_checkup_nMeaning">健康文章</a></li>
+                <li><a href="#symptom_reference">症狀就醫參考表</a></li>
+                <li><a href="#h_article">體檢數據意義</a></li>
+            </ul>
+
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--健康文章內容-->
+    <div data-role="page" id="h_checkup_nMeaning">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>健康文章</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <ol data-role="listview" data-inset="true" data-filter="true"
+                data-filter-placeholder="例如：心肌梗塞" data-filter-reveal="true">
+                <li>心肌梗塞</li>
+                <li>心肌缺氧</li>
+                <li>心律不整</li>
+            </ol>
+            <!--<a href="#hyper" class="ui-btn">三高</a>-->
+            <!--<a href="#dementia" class="ui-btn">失智症</a>
+            <a href="#heart_disease" class="ui-btn">心臟病</a>
+            <a href="#kidney_disease" class="ui-btn">腎臟病</a>
+            <a href="#cancer" class="ui-btn">癌症</a>
+            <a href="#diabetes" class="ui-btn">糖尿病</a>-->
+            <div data-role="collapsibleset" data-theme="a" data-inset="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                <div data-role="collapsible">
+                    <h2>三高</h2>
+                    <ul data-role="listview" data-inset="true">
+                        <li><a href="#hyper1">代謝症候群</a></li>
+                        <li><a href="#hyper2">高血壓</a></li>
+                        <li><a href="#hyper3">高血脂</a></li>
+                        <li><a href="#hyper4">高血糖</a></li>
+                    </ul>
+                </div>
+                <div data-role="collapsible">
+                    <h2>失智症</h2>
+                    <ul data-role="listview" data-inset="true">
+                        <li><a href="#dementia1">失智症的介紹</a></li>
+                        <li><a href="#dementia2">失智症的預防</a></li>
+                        <li><a href="#dementia3">失智症的倫理法律議題</a></li>
+                    </ul>
+                </div>
+                <div data-role="collapsible">
+                    <h2>心臟病</h2>
+                    <ul data-role="listview" data-inset="true">
+                        <li><a href="#heart_disease1">認識心臟病</a></li>
+                        <li><a href="#heart_disease2">預防&保健</a></li>
+                        <li><a href="#heart_disease3">心臟病患者照顧需知</a></li>
+                    </ul>
+                </div>
+                <div data-role="collapsible">
+                    <h2>腎臟病</h2>
+                    <ul data-role="listview" data-inset="true">
+                        <li><a href="#kidney_disease1">認識腎臟病</a></li>
+                        <li><a href="#kidney_disease2">預防&保健</a></li>
+                    </ul>
+                </div>
+                <div data-role="collapsible">
+                    <h2>癌症</h2>
+                    <ul data-role="listview" data-inset="true">
+                        <li><a href="#cancer1">癌症篩選</a></li>
+                        <li><a href="#cancer2">癌症防治</a></li>
+                        <li><a href="#cancer3">癌症資訊</a></li>
+                        <li><a href="#cancer4">認識化療</a></li>
+                        <li><a href="#cancer5">相關補助</a></li>
+                    </ul>
+                </div>
+                <div data-role="collapsible">
+                    <h2>糖尿病</h2>
+                    <ul data-role="listview" data-inset="true">
+                        <li><a href="#diabetes1">何謂糖尿病</a></li>
+                        <li><a href="#diabetes2">糖尿病篩檢</a></li>
+                        <li><a href="#diabetes3">糖尿病治療與防治</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--三高內容-->
+    <!--代謝症候群內容-->
+    <div data-role="page" id="hyper1">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>代謝症候群</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <p><a href="http://www.twhealth.org.tw/index.php?option=com_zoo&task=item&item_id=279&Itemid=19">代謝症候群引爆健康危機 小心中厚惹麻煩</a></p><hr />
+            <p><a href="http://www.commonhealth.com.tw/article/article.action?nid=64975">代謝症候群你還不知道的健康殺手</a></p><hr />
+            <p><a href="http://www.youth.com.tw/db/epaper/es002001/eb2403.htm">新版代謝症候群判定標準出爐</a></p>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--高血壓內容-->
+    <div data-role="page" id="hyper2">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>高血壓</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <div role="main" class="ui-content">
+                <p><a href="http://www.ntdtv.com/xtr/b5/2014/08/12/a1129506.html">15種食物 助你遠離高血壓</a></p><hr />
+                <p><a href="http://www.commonhealth.com.tw/article/article.action?nid=60982">６成上班族血壓異常，健康飲食降低高血壓</a></p><hr />
+                <p><a href="http://hypertension.org.tw/publish_cont.php?id=31">談高血壓與運動</a></p>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--高血脂內容-->
+    <div data-role="page" id="hyper3">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>高血脂</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <div role="main" class="ui-content">
+                <p><a href="http://www.commonhealth.com.tw/article/article.action?nid=64202">高血脂，你最想問的10個問題</a></p><hr />
+                <p><a href="http://www.pfizer.com.tw/mediacalinfo/2010/01/Page08.asp">遠離高血脂教戰守則</a></p><hr />
+                <p><a href="http://www.mmh.org.tw/MackayInfo2/article/B295/198.htm">遠離高血脂症的三門功課</a></p>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--高血糖內容-->
+    <div data-role="page" id="hyper4">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>高血糖</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <div role="main" class="ui-content">
+                <p><a href="http://www.kmuh.org.tw/www/kmcj/data/10306/6.htm">高血糖就是糖尿病嗎？</a></p><hr />
+                <p><a href="http://www.vghtc.gov.tw/GipOpenWeb/wSite/ct?xItem=34607&ctNode=30574&mp=210400">高血糖急症</a></p><hr />
+                <p><a href="http://www.leeclinic.url.tw/disease-1-05.asp">糖尿病急症-高血糖</a></p>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--失智症內容-->
+    <!--失智症的介紹內容-->
+    <div data-role="page" id="dementia1">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>失智症的介紹</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <p><a href="http://dementia.health.gov.tw/app_prog/2-2.aspx">失智症的早期徵兆</a></p><hr />
+            <p><a href="http://ksph.kcg.gov.tw/walking02.htm">失智症的症狀與照顧</a></p><hr />
+            <p><a href="http://www.dcsa-yilan.org.tw/link7.asp?id=2">什麼是失智症</a></p>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--失智症的預防內容-->
+    <div data-role="page" id="dementia2">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>失智症的預防</h1>
+        </div>
+        <div role="main" class="ui-content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--失智症的倫理法律議題內容-->
+    <div data-role="page" id="dementia3">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>失智症的倫理法律議題</h1>
+        </div>
+        <div role="main" class="ui-content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--心臟病內容-->
+    <!--認識心臟病內容-->
+    <div data-role="page" id="heart_disease1">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>認識心臟病</h1>
+        </div>
+        <div role="main" class="ui-content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--心臟病的預防&保健內容-->
+    <div data-role="page" id="heart_disease2">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>心臟病的預防&保健</h1>
+        </div>
+        <div role="main" class="ui-content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--心臟病患者照顧需知內容-->
+    <div data-role="page" id="heart_disease3">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>心臟病患者照顧需知</h1>
+        </div>
+        <div role="main" class="ui-content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--腎臟病內容-->
+    <!--認識腎臟病內容-->
+    <div data-role="page" id="kidney_disease1">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>認識腎臟病</h1>
+        </div>
+        <div role="main" class="ui-content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--腎臟病的預防&保健內容-->
+    <div data-role="page" id="kidney_disease2">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>腎臟病的預防&保健</h1>
+        </div>
+        <div role="main" class="ui-content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--癌症內容-->
+    <!--癌症篩選內容-->
+    <div data-role="page" id="cancer1">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>癌症篩選</h1>
+        </div>
+        <div role="main" class="ui-content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--癌症防治內容-->
+    <div data-role="page" id="cancer2">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>癌症防治</h1>
+        </div>
+        <div role="main" class="ui-content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:300px">頭痛</a>
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--癌症資訊內容-->
+    <div data-role="page" id="cancer3">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>癌症資訊</h1>
+        </div>
+        <div role="main" class="ui-content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--認識化療內容-->
+    <div data-role="page" id="cancer4">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>認識化療</h1>
+        </div>
+        <div role="main" class="ui-content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--癌症相關補助內容-->
+    <div data-role="page" id="cancer5">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>癌症相關補助</h1>
+        </div>
+        <div role="main" class="ui-content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--糖尿病內容-->
+    <!--何謂糖尿病內容-->
+    <div data-role="page" id="diabetes1">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>何謂糖尿病</h1>
+        </div>
+        <div role="main" class="ui-content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--糖尿病篩檢內容-->
+    <div data-role="page" id="diabetes2">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>糖尿病篩檢</h1>
+        </div>
+        <div role="main" class="ui-content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--糖尿病治療與防治內容-->
+    <div data-role="page" id="diabetes3">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>糖尿病治療與防治</h1>
+        </div>
+        <div role="main" class="ui-content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--症狀就醫參考表內容-->
+    <div data-role="page" id="symptom_reference">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>症狀就醫參考表</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <ol data-role="listview" data-inset="true" data-filter="true"
+                data-filter-placeholder="例如：頭痛" data-filter-reveal="true">
+                <li><a href="#symptom1" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">發燒</a></li>
+                <li><a href="#symptom2" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">疲勞</a></li>
+                <li><a href="#symptom3" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">感冒</a></li>
+                <li><a href="#symptom4" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">頭痛</a></li>
+                <li><a href="#symptom5" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">頭暈</a></li>
+                <li><a href="#symptom6" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">眩暈</a></li>
+                <li><a href="#symptom7" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">高血壓</a></li>
+                <li><a href="#symptom8" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">貧血</a></li>
+                <li><a href="#symptom9" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">黃疸</a></li>
+                <li><a href="#symptom10" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">掉頭髮</a></li>
+                <li><a href="#symptom11" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">眼睛乾</a></li>
+                <li><a href="#symptom12" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">眼睛疲勞</a></li>
+                <li><a href="#symptom13" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">凸眼</a></li>
+                <li><a href="#symptom14" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">飛蚊症</a></li>
+                <li><a href="#symptom15" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">流鼻血</a></li>
+                <li><a href="#symptom16" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">過敏性鼻炎</a></li>
+                <li><a href="#symptom17" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">打鼾</a></li>
+                <li><a href="#symptom18" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">口腔潰瘍</a></li>
+                <li><a href="#symptom19" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">口臭</a></li>
+                <li><a href="#symptom20" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">咳嗽</a></li>
+                <li><a href="#symptom21" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">喉嚨痛</a></li>
+                <li><a href="#symptom22" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">扁桃腺發炎</a></li>
+                <li><a href="#symptom23" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">咳血</a></li>
+                <li><a href="#symptom24" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">頸部腫大</a></li>
+                <li><a href="#symptom25" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">喘不過氣</a></li>
+                <li><a href="#symptom26" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">胸痛</a></li>
+                <li><a href="#symptom27" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">心悸</a></li>
+                <li><a href="#symptom28" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">心窩灼熱感</a></li>
+                <li><a href="#symptom29" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">乳房脹痛</a></li>
+                <li><a href="#symptom30" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">消化不良</a></li>
+            </ol>
+            <a href="#symptom1" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">發燒</a>
+            <a href="#symptom2" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">疲勞</a>
+            <a href="#symptom3" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">感冒</a>
+            <a href="#symptom4" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">頭痛</a>
+            <a href="#symptom5" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">頭暈</a>
+            <a href="#symptom6" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">眩暈</a>
+            <a href="#symptom7" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">高血壓</a>
+            <a href="#symptom8" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">貧血</a>
+            <a href="#symptom9" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">黃疸</a>
+            <a href="#symptom10" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">掉頭髮</a>
+            <a href="#symptom11" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">眼睛乾</a>
+            <a href="#symptom12" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">眼睛疲勞</a>
+            <a href="#symptom13" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">凸眼</a>
+            <a href="#symptom14" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">飛蚊症</a>
+            <a href="#symptom15" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">流鼻血</a>
+            <a href="#symptom16" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">過敏性鼻炎</a>
+            <a href="#symptom17" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">打鼾</a>
+            <a href="#symptom18" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">口腔潰瘍</a>
+            <a href="#symptom19" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">口臭</a>
+            <a href="#symptom20" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">咳嗽</a>
+            <a href="#symptom21" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">喉嚨痛</a>
+            <a href="#symptom22" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">扁桃腺發炎</a>
+            <a href="#symptom23" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">咳血</a>
+            <a href="#symptom24" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">頸部腫大</a>
+            <a href="#symptom25" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">喘不過氣</a>
+            <a href="#symptom26" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">胸痛</a>
+            <a href="#symptom27" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">心悸</a>
+            <a href="#symptom28" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">心窩灼熱感</a>
+            <a href="#symptom29" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">乳房脹痛</a>
+            <a href="#symptom30" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" style="width:85px">消化不良</a>
+
+
+
+
+            <div data-role="popup" id="symptom1" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>一般內科、感染科、家庭醫學科、過敏免疫風濕科</p>
+            </div>
+            <div data-role="popup" id="symptom2" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>一般內科、家庭醫學科</p>
+            </div>
+
+            <div data-role="popup" id="symptom3" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>一般內科、家庭醫學科、耳鼻喉科</p>
+            </div>
+
+            <div data-role="popup" id="symptom4" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>一般內科、神經內科、家庭醫學科</p>
+
+            </div>
+            <div data-role="popup" id="symptom5" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>一般內科、神經內科、家庭醫學科</p>
+
+            </div>
+            <div data-role="popup" id="symptom6" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>耳鼻喉科、神經內科、家庭醫學科</p>
+
+            </div>
+            <div data-role="popup" id="symptom7" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>一般內科、心臟內科、家庭醫學科</p>
+
+            </div>
+            <div data-role="popup" id="symptom8" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>一般內科、家庭醫學科、血液科</p>
+
+            </div>
+            <div data-role="popup" id="symptom9" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>小兒科、一般內科、胃腸科、家庭醫學科、血液科</p>
+
+            </div>
+            <div data-role="popup" id="symptom10" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>皮膚科、過敏免疫風溼科</p>
+
+            </div>
+            <div data-role="popup" id="symptom11" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>眼科、家庭醫學科、過敏免疫風濕科</p>
+
+            </div>
+            <div data-role="popup" id="symptom12" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>眼科、家庭醫學科</p>
+
+            </div>
+            <div data-role="popup" id="symptom13" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>新陳代謝科、眼科</p>
+
+            </div>
+            <div data-role="popup" id="symptom14" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>眼科　</p>
+
+            </div>
+            <div data-role="popup" id="symptom15" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>耳鼻喉科 </p>
+
+            </div>
+            <div data-role="popup" id="symptom16" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>過敏免疫風濕科、耳鼻喉科、小兒科</p>
+
+            </div>
+            <div data-role="popup" id="symptom17" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>耳鼻喉科、神經內科、胸腔內科</p>
+
+            </div>
+            <div data-role="popup" id="symptom18" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>
+                    牙科（口腔外科）、喉科、家庭醫學科、過敏免疫濕
+                    科
+                </p>
+
+            </div>
+            <div data-role="popup" id="symptom19" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>牙科、一般內科、胃腸科、耳鼻喉科</p>
+
+            </div>
+            <div data-role="popup" id="symptom20" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>一般內科、胸腔內科、耳鼻喉科、家庭醫學科</p>
+
+            </div>
+            <div data-role="popup" id="symptom21" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>一般內科、耳鼻喉科、家庭醫學科</p>
+
+            </div>
+            <div data-role="popup" id="symptom22" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>一般內科、耳鼻喉科、家庭醫學科</p>
+
+            </div>
+            <div data-role="popup" id="symptom23" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>胸腔內科、耳鼻喉科、家庭醫學科、一般內科</p>
+
+            </div>
+            <div data-role="popup" id="symptom24" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>新陳代謝科、耳鼻喉科、一般外科、家庭醫學科</p>
+
+            </div>
+            <div data-role="popup" id="symptom25" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>心臟內科、胸腔內科、一般內科、家庭醫學科</p>
+
+            </div>
+            <div data-role="popup" id="symptom26" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>心臟內科、胸腔內科、一般內科、家庭醫學科</p>
+
+            </div>
+            <div data-role="popup" id="symptom27" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>心臟內科、新陳代謝科、一般內科、家庭醫學科</p>
+
+            </div>
+            <div data-role="popup" id="symptom28" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>一般內科、胃腸科、家庭醫學科 </p>
+
+            </div>
+            <div data-role="popup" id="symptom29" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>一般外科、婦產科 </p>
+
+            </div>
+            <div data-role="popup" id="symptom30" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p><b>建議就醫科別：</b></p>
+                <p>胃腸科、一般內科、家庭醫學科</p>
+
+            </div>
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <!--健檢名詞內容-->
+    <div data-role="page" id="h_article">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>體檢數據意義</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <ol data-role="listview" data-inset="true" data-filter="true"
+                data-filter-placeholder="例如：血小板" data-filter-reveal="true">
+                <li>紅血球</li>
+                <li>血紅素</li>
+                <li>白血球</li>
+            </ol>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#h_article1">高血壓的定義</a></li>
+                <li><a href="#h_article2">肝、膽功能檢查</a></li>
+                <li><a href="#h_article3">糞便常規檢查</a></li>
+                <li><a href="#h_article4">肝炎檢查</a></li>
+                <li><a href="#h_article5">腎功能檢查</a></li>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <div data-role="page" id="h_article1">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>高血壓的定義</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <div data-role="collapsible-set">
+                <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                    <h3>正常血壓</h3>
+                    <p>收縮壓：＜130<br>舒張壓：＜85</p>
+                </div>
+                <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                    <h3>正常但偏高之血壓</h3>
+                    <p>收縮壓：130-139<br>舒張壓：85-89</p>
+                </div>
+                <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                    <h3>高血壓～輕度</h3>
+                    <p>收縮壓：140-159<br>舒張壓：90-99</p>
+                </div>
+                <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                    <h3>高血壓～中度</h3>
+                    <p>收縮壓：160-179<br>舒張壓：100-109</p>
+                </div>
+                <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                    <h3>高血壓～重度</h3>
+                    <p>收縮壓：180-209<br>舒張壓：110-119</p>
+                </div>
+                <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                    <h3>高血壓～極嚴重</h3>
+                    <p>收縮壓：≧210<br>舒張壓：≧120</p>
+                </div>
+                <div>
+                    <h2>注意事項</h2>
+                    <pre>
+1、充分的睡眠與休息，避免過度勞累與精神緊
+   張。
+2、適度輕鬆的運動，維持理想的體重。
+3、保持大便通暢，預防便秘。
+4、避免用太冷太熱的水洗澡或浸浴。
+5、選擇新鮮的食物，避免醃製及加工食品，如
+   鹹菜、蔭瓜、醬瓜罐頭等。
+6、忌食含鈉量極高的食品及蔬菜，如蜜餞、餅
+   干、芹菜、胡蘿蔔、海帶、紫菜、發芽蠶豆
+   等不要大量使用。
+7、避免抽菸、喝酒。節制茶葉、咖啡、可樂等
+   含咖啡因的飲料。
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <div data-role="page" id="h_article2">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>肝、膽功能檢查</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <div data-role="collapsible-set">
+                <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                    <h3>AST (SGOT)<br />天門冬胺酸轉胺酵素</h3>
+                    <p>參考值：0-34 U/L<br>檢查意義：<br>值↑過高。肝、心、腦或血球細胞之病變。若器官或組織或肌肉損傷，血液中的SGOT 就會增加。</p>
+                </div>
+                <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                    <h3>ALT (SGPT)<br />麩丙胺酸轉胺酵素</h3>
+                    <p>參考值：0-36 U/L<br>檢查意義：<br>值↑過高。生活作息不正常、應酬過多、急慢性肝炎、酒精性肝障礙、肝硬化、肝癌等。</p>
+                </div>
+                <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                    <h3>T.Bili<br />總膽紅素</h3>
+                    <p>參考值：0.0-1.4 mg/%<br>檢查意義：<br>值↑過高。溶血性黃疸、新生兒黃疸、阻塞性黃疸、中毒性肝炎、病毒性肝炎等病症。</p>
+                </div>
+                <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                    <h3>D.Bili<br />直接膽紅素</h3>
+                    <p>參考值：0.0-0.5 mg/%<br>檢查意義：<br>值↑過高。肝炎、肝硬化、肝萎縮、阻塞性黃疸、良性妊娠性黃疸等病症。</p>
+                </div>
+                <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                    <h3>TP<br />總蛋白質</h3>
+                    <p>參考值：6.0-8.3 g/dl<br>檢查意義：<br>值↑過高。肝臟疾病。值↓過低。營養不良。</p>
+                </div>
+                <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                    <h3>ALB<br />白蛋白</h3>
+                    <p>參考值：3.7-5.1 g/dl<br>檢查意義：<br>值↓過低。腎病症候群、傳染性肝炎、肝硬化、營養不良、各種消化性疾病等病症。</p>
+                </div>
+                <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                    <h3>GLO<br />球蛋白</h3>
+                    <p>參考值：2.2-3.3 g/dl<br>檢查意義：<br>須配合總蛋白質、白蛋白檢驗值結果來判讀。</p>
+                </div>
+                <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                    <h3>ALK-P<br />鹼性磷酸酵素</h3>
+                    <p>參考值：37-95 u/l<br>檢查意義：<br>值↑過高。阻塞性黃疸、肝硬變、肝炎、各種骨骼疾病、膽道系疾患、脂肪肝等病症。</p>
+                </div>
+                <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                    <h3>r-GT麩胺酸轉移酵素</h3>
+                    <p>參考值：0-30 u/l<br>檢查意義：<br>值↑過高。肝膽疾病、胰臟炎、飲酒、心衰竭、藥毒性等</p>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <div data-role="page" id="h_article3">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>糞便常規檢查</h1>
+        </div>
+        <div role="main" class="ui-content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <div data-role="page" id="h_article4">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>肝炎檢查</h1>
+        </div>
+        <div role="main" class="ui-content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+    <div data-role="page" id="h_article5">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="返回">
+            <h1>腎功能檢查</h1>
+        </div>
+        <div role="main" class="ui-content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>頁尾</h4>
+        </div>
+    </div>
+</body>
+</html>

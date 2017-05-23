@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <title>個人資料</title>
+
+    <link rel="stylesheet" href="css/index.css">
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+
+    <script src="scripts/jquery-1.8.0.min.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/appBundle.js"></script>
+    <!--主頁-->
+    <div data-role="page" id="Homepage">
+        <div data-role="header">
+            <a href="#panel" class="ui-btn ui-icon-bullets ui-btn-icon-notext"></a>
+            <h1>HomeCare</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <br />
+            <table style="margin:auto;width:100%;height:100%;" id="homepageTd">
+                <tr>
+                    <td style="border:1px solid lightgray;">
+                        <a href="health_rec.html" data-ajax="false"><img src="images/myRecord.jpg" style="width:100%;" /></a>
+                        <p>健康紀錄</p>
+                    </td>
+                    <td style="border:1px solid lightgray;">
+                        <a href="medicine.html" data-ajax="false"><img src="images/med.jpg" style="width:100%;" /></a>
+                        <p>領藥紀錄</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid lightgray;">
+                        <a href="med_rec.html" data-ajax="false"><img src="images/doctor.jpg" style="width:100%;" /></a>
+                        <p>看診紀錄</p>
+                    </td>
+                    <td style="border:1px solid lightgray;">
+                        <a href="take.html" data-ajax="false"><img src="images/takeMed.jpg" style="width:100%;" /></a>
+                        <p>用藥紀錄</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid lightgray;">
+                        <a href="test.html" data-ajax="false"><img src="images/selfTest.jpg" style="width:100%;" /></a>
+                        <p>自我檢測</p>
+                    </td>                    
+                    <td style="border:1px solid lightgray;">
+                        <a href="health.html" data-ajax="false"><img src="images/health.jpg" style="width:100%;" /></a>
+                        <p>健康新知</p>
+                    </td>
+                </tr>
+            </table>
+
+
+        </div>
+        <div id="panel" data-role="panel" data-position="left" data-display="overlay">
+            <div data-role="header" style="height:200px;margin:-15px;background-color:#30BF9E;">
+                <br /><br /><br /><br /><br /><br />
+                <p>sorrow31812</p>
+                <p>窩窩頭</p>
+            </div>
+            <div role="main" class="ui-content" style="margin:-15px;">
+                <br /><br />
+                <ul data-role="listview">
+                    <li data-icon="user"><a href="#pDataHomepage">個人資料</a></li>
+                    <li data-icon="lock"><a href="#userrightsHomepage">權限設定</a></li>
+                    <li data-icon="audio"><a href="broadcastSetting.html">推播設定</a></li>
+                </ul><br /><hr />
+            </div>
+        </div>
+    </div>
+    <!--個人資料-->
+    <div data-role="page" id="pDataHomepage">
+        <div data-role="header" data-position="fixed">
+            <a href="#Homepage"><img type="button" src="images/back.png" style="width:30px;height:25px;" /></a>
+            <h1>個人資料</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a>
+                            <img src="images/user.png" style="width:70px;position:absolute;left:30px;" /><br />
+                            <p>sorrow31812<br />邱科瑋</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div role="main" class="ui-content">
+            <br />
+            <p>姓名:</p><label></label>
+            <p>電子郵件:</p><label></label>
+            <p>註冊日期:</p><label></label>
+            <hr />
+            <p>性別:</p><label></label>
+            <p>生日:</p><label></label>
+            <p>年齡:</p><label></label>
+            <p>血型:</p><label></label>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li>
+                        <a href="#pDataEdit" id="toEditMode" data-icon="edit">編輯個人資料</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div data-role="page" id="pDataEdit" data-theme="a">
+        <div data-role="header" data-position="fixed">
+            <a href="#pDataHomepage"><img type="button" src="images/back.png" style="width:30px;height:25px;" /></a>
+            <h1>編輯個人資料</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <form method="get" action="">
+                <br />
+                <label for="inputText1">姓名:</label>
+                <input type="text" name="inputText" id="inputText1" />
+                <label for="inputEmail">電子郵件:</label>
+                <input type="email" name="inputEmail" id="inputEmail" />
+                <label>註冊日期:</label>
+                <hr />
+                <label for="inputText2">性別:</label>
+                <input type="text" name="inputText" id="inputText2" />
+                <label for="inputDate">生日:</label>
+                <input type="date" name="inputDate" id="inputDate" />
+                <label>年齡:</label>
+                <label for="inputText3">血型:</label>
+                <input type="text" name="inputText" id="inputText3" />
+            </form>
+            <div>
+                <a href="#pDataHomepage" class="ui-btn ui-btn-inline"
+                   style="position:absolute;left:100px;">確認</a>
+                <a href="#pDataHomepage" class="ui-btn ui-btn-inline"
+                   style="position:absolute;left:190px;">取消</a>
+            </div>
+        </div>
+    </div>
+    <!--權限設定-->
+    <div data-role="page" id="userrightsHomepage">
+        <div data-role="header" data-position="fixed" data-id="main">
+            <a href="#Homepage"><img type="button" src="images/back.png" style="width:30px;height:25px;" /></a>
+            <h1>權限設定</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#userrightsHomepage" class="ui-btn-active ui-state-persist">您照顧的人</a></li>
+                    <li><a href="#userrightsPage2" id="UserRights2">照顧您的人</a></li>
+                </ul>
+            </div>
+        </div>
+        <div role="main" class="ui-content">
+            <br />
+            <h1>目前與您連接的用戶一共10位</h1>
+            <br />
+            <hr /><br />
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <a href="#" rel="external">
+                        <img style="width:80px;" src="images/user.png" class="ul-li-icon" />
+                        <h2>窩顆顆</h2><p>john54698</p>
+                    </a>
+                    <a href="#alert1" data-icon="delete" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <p>取消連接</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" rel="external">
+                        <img style="width:80px;" src="images/user.png" class="ul-li-icon" />
+                        <h2>窩窩頭</h2><p>julia56428</p>
+                    </a>
+                    <a href="#alert1" data-icon="delete" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <p>取消連接</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" rel="external">
+                        <img style="width:80px;" src="images/user.png" class="ul-li-icon" />
+                        <h2>三上悠亞</h2><p>Mary5566</p>
+                    </a>
+                    <a href="#alert1" data-icon="delete" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <p>取消連接</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" rel="external">
+                        <img style="width:80px;" src="images/user.png" class="ul-li-icon" />
+                        <h2>大槻響</h2><p>gagaLady19152</p>
+                    </a>
+                    <a href="#alert1" data-icon="delete" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <p>取消連接</p>
+                    </a>
+                </li>
+            </ul>
+            <div data-role="popup" id="alert1" data-close-btn="right">
+                <div data-role="header">
+                    <h1>取消連接</h1>
+                </div>
+                <div role="main" class="ui-content">
+                    <p>是否取消與窩窩頭的連接?</p>
+                    <a href="#UserRights1" class="ui-btn">確認</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-role="page" id="userrightsPage2">
+        <div data-role="header" data-position="fixed" data-add-back-btn="true" data-id="main">
+            <a href="#Homepage"><img type="button" src="images/back.png" style="width:30px;height:25px;" /></a>
+            <h1>權限設定</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#userrightsHomepage">您照顧的人</a></li>
+                    <li><a href="#userrightsPage2" class="ui-btn-active ui-state-persist">照顧您的人</a></li>
+                </ul>
+            </div>
+        </div>
+        <div role="main" class="ui-content">
+            <br />
+            <h1>目前與您連接的用戶一共4位</h1>
+            <br />
+            <hr /><br />
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <a href="#" rel="external">
+                        <img style="width:80px;" src="images/user.png" class="ul-li-icon" />
+                        <h2>窩顆顆</h2><p>john54698</p>
+                    </a>
+                    <a href="#alert2" data-icon="delete" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <p>取消連接</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" rel="external">
+                        <img style="width:80px;" src="images/user.png" class="ul-li-icon" />
+                        <h2>窩窩頭</h2><p>julia56428</p>
+                    </a>
+                    <a href="#alert2" data-icon="delete" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <p>取消連接</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" rel="external">
+                        <img style="width:80px;" src="images/user.png" class="ul-li-icon" />
+                        <h2>阿部美加子</h2><p>Mary5566</p>
+                    </a>
+                    <a href="#alert2" data-icon="delete" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <p>取消連接</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" rel="external">
+                        <img style="width:80px;" src="images/user.png" class="ul-li-icon" />
+                        <h2>大槻響</h2><p>gagaLady19152</p>
+                    </a>
+                    <a href="#alert2" data-icon="delete" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <p>取消連接</p>
+                    </a>
+                </li>
+            </ul>
+            <div data-role="popup" id="alert2" data-close-btn="right">
+                <div data-role="header">
+                    <h1>取消連接</h1>
+                </div>
+                <div role="main" class="ui-content">
+                    <p>是否取消與窩窩頭的連接?</p>
+                    <a href="#UserRights2" class="ui-btn">確認</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
