@@ -9,62 +9,63 @@
 
     <link rel="stylesheet" href="css/index.css">
     <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+    <link href="css/HCStyle.css" rel="stylesheet" />
 
     <script src="scripts/jquery-1.8.0.min.js"></script>
     <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
-
+    <script src="scripts/HC.js"></script>
 </head>
 <body>
     <script type="text/javascript" src="scripts/platformOverrides.js"></script>
     <script type="text/javascript" src="scripts/appBundle.js"></script>
     <!--主頁-->
     <div data-role="page" id="Homepage">
-        <div data-role="header">
-            <a href="#panel" class="ui-btn ui-icon-bullets ui-btn-icon-notext"></a>
+        <div data-role="header" class="myHeader">
+            <a href="#hpPanel" class="ui-btn ui-icon-bullets ui-btn-icon-notext"></a>
             <h1>HomeCare</h1>
         </div>
         <div role="main" class="ui-content">
             <br />
-            <table style="margin:auto;width:100%;height:100%;" id="homepageTd">
+            <table class="hptable" id="homepageTd">
                 <tr>
-                    <td style="border:1px solid lightgray;">
-                        <a href="health_rec.html" data-ajax="false"><img src="images/myRecord.jpg" style="width:100%;" /></a>
+                    <td>
+                        <a href="health_rec.html" data-ajax="false"><img src="images/myRecord.jpg" style="width: 100%;" /></a>
                         <p>健康紀錄</p>
                     </td>
-                    <td style="border:1px solid lightgray;">
-                        <a href="medicine.html" data-ajax="false"><img src="images/med.jpg" style="width:100%;" /></a>
+                    <td>
+                        <a href="medicine.html" data-ajax="false"><img src="images/med.jpg" style="width: 100%;"  /></a>
                         <p>領藥紀錄</p>
                     </td>
                 </tr>
                 <tr>
-                    <td style="border:1px solid lightgray;">
-                        <a href="med_rec.html" data-ajax="false"><img src="images/doctor.jpg" style="width:100%;" /></a>
+                    <td>
+                        <a href="med_rec.html" data-ajax="false"><img src="images/doctor.jpg" style="width: 100%;"  /></a>
                         <p>看診紀錄</p>
                     </td>
-                    <td style="border:1px solid lightgray;">
-                        <a href="take.html" data-ajax="false"><img src="images/takeMed.jpg" style="width:100%;" /></a>
+                    <td>
+                        <a href="take.html" data-ajax="false"><img src="images/takeMed.jpg" style="width: 100%;" /></a>
                         <p>用藥紀錄</p>
                     </td>
                 </tr>
                 <tr>
-                    <td style="border:1px solid lightgray;">
-                        <a href="test.html" data-ajax="false"><img src="images/selfTest.jpg" style="width:100%;" /></a>
+                    <td>
+                        <a href="test.html" data-ajax="false"><img src="images/selfTest.jpg" style="width: 100%;"  /></a>
                         <p>自我檢測</p>
-                    </td>                    
-                    <td style="border:1px solid lightgray;">
-                        <a href="health.html" data-ajax="false"><img src="images/health.jpg" style="width:100%;" /></a>
+                    </td>
+                    <td>
+                        <a href="health.html" data-ajax="false"><img src="images/health.jpg"  style="width: 100%;" /></a>
                         <p>健康新知</p>
                     </td>
                 </tr>
             </table>
-
-
         </div>
-        <div id="panel" data-role="panel" data-position="left" data-display="overlay">
-            <div data-role="header" style="height:200px;margin:-15px;background-color:#30BF9E;">
-                <br /><br /><br /><br /><br /><br />
-                <p>sorrow31812</p>
-                <p>窩窩頭</p>
+        <div id="hpPanel" data-role="panel" data-position="left" data-display="overlay">
+            <div data-role="header" id="panelBG">
+
+                <br /><br /><br /><br /><br />
+                <p class="panel_account">sorrow31812</p>
+                <hr />
+                <p class="panel_account">窩窩頭</p>
             </div>
             <div role="main" class="ui-content" style="margin:-15px;">
                 <br /><br />
