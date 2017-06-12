@@ -5,23 +5,35 @@
     <meta charset="utf-8" />
     <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-    <title>登入</title>
-    <link href="css/index.css" rel="stylesheet" />
-    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css" />
-    <script src="scripts/jquery-1.8.0.min.js" type="text/javascript"></script>
-    <script src="scripts/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+    <title>領藥紀錄</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+    <link href="css/hc_theme.css" rel="stylesheet" />
+    <link href="css/jquery.mobile.icons-1.4.5.min.css" rel="stylesheet" />
+    <script src="scripts/jquery-1.8.0.min.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    <script src="scripts/hc_javascript.js"></script>
 </head>
 <body>
 
-    <div data-role="page" id="pick">
-        <div data-role="header" >
-            <a href="home.html" data-icon="arrow-l" class="ui-btn-left" data-theme="b">back</a>
+    <div data-role="page" id="addPick">
+        <div data-role="header" data-position="fixed" data-id="addPick">
+            <a href="home.html"><i class="material-icons">arrow_back</i></a>
             <h1>領藥紀錄</h1>
-            
-          
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#addPick" class="ui-btn-active ui-state-persist">新增領藥紀錄</a></li>
+                    <li><a href="#selectPick">查詢領藥紀錄</a></li>
+                </ul>
+            </div>
         </div>
-        <div data-role="main" class="ui-content">
+        <div role="main" class="ui-content">
             <form method="post" action="/action_page_post.php">
+                <label for="caregiver">選擇照顧者</label>
+                <select name="caregiver" id="medCaregiver" data-native-menu="false">
+                    <option value="1">江丘零</option>
+                    <option value="2">撂得滑</option>
+                </select>
                 <label for="medName">藥名</label>
                 <input type="text" name="medName" id="medName">
                 <label for="med_res">藥物來源</label>
@@ -32,62 +44,51 @@
                 <input type="file" name="pic" id="picture" value="">
                 <label for="date">領藥日期</label>
                 <input type="date" name="date" id="date" value="">
-                <button type="submit">送出</button>
             </form>
+            <input type="submit" name="submit" id="button1" data-inline="true" value="送出">
+            <input type="reset" name="reset" id="resetBtn" data-inline="true" value="重設" onclick="resetForm">
+
         </div>
     </div>
 
-    <div data-role="page" id="take">
-        <div data-role="header" data-add-back-btn="true" data-back-btn-text="領藥紀錄">
-            <h1>用藥紀錄</h1>
+    <div data-role="page" id="selectPick">
+        <div data-role="header" data-position="fixed" data-id="selectPick">
+            <a href="home.html"><i class="material-icons">arrow_back</i></a>
+            <h1>領藥紀錄</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#addPick">新增領藥紀錄</a></li>
+                    <li><a href="#selectPick" class="ui-btn-active ui-state-persist">查詢領藥記錄</a></li>
+                </ul>
+            </div>
         </div>
+        <div role="main" class="ui-content">
+            <p>這裡是查詢領藥記錄</p>
 
-        <div data-role="main" class="ui-content">
-            <form method="post" action="/action_page_post.php">
 
-                <label for="day">藥名</label>
-                <select name="med" id="med">
-                    <option value="1">感冒藥</option>
-                    <option value="2">頭痛藥</option>
-                    <option value="3">胃藥</option>
-                    <option value="4">活力藥水</option>
-                    <option value="5">透明人間??</option>
-                    <option value="6">十八銅人行氣散</option>
-                    <option value="7">龍蝦三爭霸之李嚴你有空做解藥沒時間做醬汁</option>
-                </select>
-
-                <fieldset data-role="controlgroup">
-                    <legend>用藥時間</legend>
-                    <input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked">
-                    <label for="radio-choice-1">早餐前</label>
-                    <input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2">
-                    <label for="radio-choice-2">早餐後</label>
-                    <input type="radio" name="radio-choice-1" id="radio-choice-3" value="choice-3">
-                    <label for="radio-choice-3">午餐前</label>
-                    <input type="radio" name="radio-choice-1" id="radio-choice-4" value="choice-4">
-                    <label for="radio-choice-4">午餐後</label>
-                    <input type="radio" name="radio-choice-1" id="radio-choice-5" value="choice-5">
-                    <label for="radio-choice-5">晚餐前</label>
-                    <input type="radio" name="radio-choice-1" id="radio-choice-6" value="choice-6">
-                    <label for="radio-choice-6">晚餐後</label>
-                    <input type="radio" name="radio-choice-1" id="radio-choice-7" value="choice-7">
-                    <label for="radio-choice-7">睡前</label>
-                </fieldset>
-                <label for="select-choice-mini" class="select">劑量</label>
-                <select name="select-choice-mini" id="select-choice-mini" data-mini="true" data-inline="true">
-                    <option value="1">1顆</option>
-                    <option value="2">2顆</option>
-                    <option value="3">3顆</option>
-                    <option value="4">4顆</option>
-                    <option value="5">5顆</option>
-                    <option value="6">6顆</option>
-                </select>
-                <label for="date">用藥日期</label>
-                <input type="date" name="date" id="date" value="">
-
-            </form>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li>
+                        <a href="#editPickMed" id="toEditPickMed" data-icon="edit">編輯領藥資料</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
+
+    <div data-role="page" id="editPickMed">
+        <div data-role="header" data-position="fixed" data-id="selectPick">
+            <a href="home.html"><i class="material-icons">arrow_back</i></a>
+            <h1>編輯領藥紀錄</h1>
+            <div data-role="content" class="ui-content">
+                blah
+            </div>
+        </div>
+    </div>
+
+
 
 </body>
 </html>
