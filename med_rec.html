@@ -3,175 +3,49 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <meta http-equiv="Content-Security-Policy" content="img-src * data:;default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-    <title>HomeCare照顧您的心</title>
-    <link href="css/index.css" rel="stylesheet" />
-    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css" />
-    <script src="scripts/jquery-1.8.0.min.js" type="text/javascript"></script>
-    <script src="scripts/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
-    <style>
-        .logo {
-            width: 200px;
-            margin-top: 0px;
-            margin-right: auto;
-            margin-bottom: 0px;
-            margin-left: auto;
-        }
-
-        .bookcover {
-            width: 200px;
-            margin: 0px auto;
-        }
-
-        .bookcover2 {
-            width: 200px;
-            margin: 0px auto;
-        }
-
-        #details #bookname {
-            font-size: 13px;
-            font-style: normal;
-            font-weight: bold;
-            color: #03C;
-            text-align: center;
-        }
-
-        #bookname2 {
-            font-size: 13px;
-            font-style: normal;
-            font-weight: bold;
-            color: #03C;
-            text-align: center;
-        }
-
-        .aligncenter {
-            color: #03C;
-            text-align: center;
-        }
-    </style>
-    <script>
-    var index = 0;           // 目前照顧者的索引
-    var curImgSrc, curBook; // 目前取得的照顧者圖檔名、照顧者名稱
-
-    var aryBookSrc = new Array("a.jpg",
-                                "b.jpg",
-                                "c.jpg",
-                                "d.jpg",
-                                "e.jpg"); // 照顧者圖片
-
-    var aryBookName = new Array("江秋霖",
-            "廖富城",
-            "邱科偉",
-            "John",
-            "馬靖威");  // 照顧者名
-
-    document.addEventListener("deviceready", onDeviceReady, false);
-    function onDeviceReady() {
-	    $("#showprev").on("click",showprev); // 上一筆
-	    $("#shownext").on("click",shownext); // 下一筆
-    };
-
-    function showprev() { // 上一筆
-	    index --;
-	    if (index<0){index=4;} // 可循環
-	    curImgSrc = "images/" + aryBookSrc[index]; // 目前取得的照顧者名稱
-	    curBook = aryBookName[index];              // 目前取得的照顧者名稱
-	    $("#bookpic").attr("src", curImgSrc);  // 動態顯示照顧者圖片
-	    $("#bookname").text(curBook);		  // 動態顯示照顧者名稱
-    }
-
-    function shownext() {  // 下一筆
-	    index ++;
-	    if (index>4){index=0;} // 可循環選頁
-	    curImgSrc="images/" + aryBookSrc[index];
-	    curBook=aryBookName[index];
-	    $("#bookpic").attr("src",curImgSrc);
-	    $("#bookname").text(curBook);
-    }
-
-    $(document).on("swipeleft", function (e) {
-	    if (e.target.id == "bookpic") {
-	        showprev();
-	    }
-    });
-
-    $(document).on("swiperight", function (e) {
-	    if (e.target.id == "bookpic") {
-	        shownext();
-	    }
-    });
-        //=================
-
-    document.addEventListener("deviceready", onDeviceReady, false);
-    function onDeviceReady() {
-        $("#showprev2").on("click", showprev2); // 上一筆
-        $("#shownext2").on("click", shownext2); // 下一筆
-    };
- function showprev2() { // 上一筆
-	    index --;
-	    if (index<0){index=4;} // 可循環選頁
-	    curImgSrc = "images/" + aryBookSrc[index]; // 目前取得的被照顧者名稱
-	    curBook = aryBookName[index];              // 目前取得的被照顧者名稱
-	    $("#bookpic2").attr("src", curImgSrc);  // 動態顯示被照顧者圖片
-	    $("#bookname2").text(curBook);		  // 動態顯示被照顧者名稱
-    }
-
-    function shownext2() {  // 下一筆
-	    index ++;
-	    if (index>4){index=0;} // 可循環選頁
-	    curImgSrc="images/" + aryBookSrc[index];
-	    curBook=aryBookName[index];
-	    $("#bookpic2").attr("src",curImgSrc);
-	    $("#bookname2").text(curBook);
-    }
-
-    $(document).on("swipeleft", function (e) {
-	    if (e.target.id == "bookpic2") {
-	        showprev();
-	    }
-    });
-
-    $(document).on("swiperight", function (e) {
-	    if (e.target.id == "bookpic2") {
-	        shownext();
-	    }
-    });
-
-
-
-    </script>
+    <title>看診紀錄</title>
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+    <link href="css/hc_theme.css" rel="stylesheet" />
+    <link href="css/jquery.mobile.icons-1.4.5.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="scripts/jquery-1.8.0.min.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    <script src="scripts/hc_javascript.js"></script>
+    
 </head>
 <body>
-    <script src="cordova.js"></script>
-    <script src="scripts/platformOverrides.js"></script>
-    <script src="scripts/index.js"></script>
+
 
     <!-- ***第一頁(home page) *** -->
     <div data-role="page" id="med_rec">
-        <div data-role="footer" data-theme="b">
+        <div data-role="header">
+            <a href="home.html"><i class="material-icons">arrow_back</i></a>
             <h1>看診記錄主頁</h1>
         </div>
         <div role="main" class="ui-content">
-            <div class="logo">
-                <p><img src="images/G.png" alt="HomeCare照顧您的心" width="200" height="200"></p>
+            <div>
+                <p><img src="images/HC_logo2.png" alt="HomeCare" width="100%"></p>
             </div>
             <h3 class="aligncenter">2017/05/19</h3>
+            
             <div class="ui-grid-a">
                 <div class="ui-block-a">
-                    <a href="#mr_insect" class="ui-btn ui-corner-all ui-btn-b ui-icon-gear ui-btn-icon-left" rel="external">新增記錄</a>
+                    <a href="#addRecord" class="ui-btn ui-corner-all ui-btn-b ui-icon-gear ui-btn-icon-left" rel="external">新增記錄</a>
                 </div>
                 <div class="ui-block-b">
-                    <a href="#mr_record" class="ui-btn ui-corner-all ui-btn-b ui-icon-star ui-btn-icon-left" rel="external">查詢記錄</a>
+                    <a href="#medHistory" class="ui-btn ui-corner-all ui-btn-b ui-icon-star ui-btn-icon-left" rel="external">查詢記錄</a>
                 </div>
             </div>
         </div>
-        <div data-role="header" data-position="fixed">
+        <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
                 <ul>
                     <li><a href="#med_rec" class="ui-btn-active ui-state-persist" data-icon="home" data-transition="fade">紀錄管理</a></li>
                     <li><a href="#details" data-icon="info" data-transition="fade">照顧您的人</a></li>
                     <li><a href="#about" data-icon="search" data-transition="fade">您照顧的人</a></li>
+
                 </ul>
             </div>
         </div>
@@ -179,7 +53,8 @@
 
     <!-- *** 第二頁(details page) *** -->
     <div data-role="page" id="details">
-        <div data-role="header" data-theme="b">
+        <div data-role="header">
+            <a href="#med_rec"><i class="material-icons">arrow_back</i></a>
             <h1>照顧人看診紀錄</h1>
         </div>
         <div role="main" class="ui-content">
@@ -195,7 +70,7 @@
             </div>
             <p id="bookname">照顧人資料</p>
         </div>
-        <div data-role="header" data-position="fixed">
+        <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
                 <ul>
                     <li><a href="#med_rec" data-icon="home" data-transition="fade">看診紀錄管理</a></li>
@@ -208,8 +83,8 @@
 
     <!-- ***第三頁 (about page) *** -->
     <div data-role="page" id="about">
-
-        <div data-role="header" data-theme="b">
+        <div data-role="header">
+            <a href="#med_rec"><i class="material-icons">arrow_back</i></a>
             <h1>被照顧人看診紀錄</h1>
         </div>
         <div role="main" class="ui-content">
@@ -225,7 +100,7 @@
             </div>
             <p id="bookname2">被照顧人資料</p>
         </div>
-        <div data-role="header" data-position="fixed">
+        <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
                 <ul>
                     <li><a href="#med_rec" data-icon="home" data-transition="fade">看診紀錄管理</a></li>
@@ -235,23 +110,23 @@
             </div>
         </div>
     </div>
+    <div data-role="page" id="medHistory">
+        <div data-role="header" data-position="fixed">
+            <a href="#med_rec"><i class="material-icons">arrow_back</i></a>
+            <h1>看診紀錄-歷史紀錄</h1>
+        </div>
 
-    <div data-role="page" id="mr_insect">
-        <div data-role="header" data-position="fixed">
-            <h1>看診紀錄-歷史紀錄</h1>
-        </div>
-        <div data-role="page" id="page2"></div>
-        <div data-role="header" data-position="fixed">
-            <h1>看診紀錄-歷史紀錄</h1>
-        </div>
         <div role="main" class="ui-content">
-            <h3>
-                看診日期:<br>
-                就醫地點:<br>
-                看診科別名稱:<br>
-                醫生姓名:<br>
-                看診內容:<br>
-            </h3>
+            <div data-role="content">
+                <ul data-role="listview">
+                    <li data-role="list-divider">廖德華</li>
+                    <li>看診日期:</li>
+                    <li>就醫地點:</li>
+                    <li>看診科別名稱:</li>
+                    <li>醫生姓名:</li>
+                    <li>看診內容:</li>
+                </ul>
+            </div>
         </div>
         <div data-role="footer" data-position="fixed" data-id="main">
             <div data-role="navbar" data-iconpos="bottom">
@@ -263,62 +138,36 @@
         </div>
     </div>
 
-    <div data-role="page" id="mr_record">
+    <div data-role="page" id="addRecord">
         <div data-role="header" data-position="fixed">
+            <a href="#med_rec"><i class="material-icons">arrow_back</i></a>
             <h1>新增看診紀錄</h1>
         </div>
         <div role="main" class="ui-content">
             <form method="get" action="">
-                <table>
-                    <tr>
-                        <td>
-                            <label for="inputText">看診日期</label>
-                        </td>
-                        <td>
-                            <input type="number" name="inputText" id="inputText" />
-                        </td>
-                    </tr>
+                <label for="caregiver">選擇照顧者</label>
+                <select name="caregiver" id="medRecCaregiver" data-native-menu="false">
+                    <option value="1">江丘零</option>
+                    <option value="2">撂得滑</option>
+                </select>
+                <label for="meddate">看診日期</label>
+                <input type="date" name="meddate" id="medDate">
+                <label for="medloc">就醫地點</label>
+                <input type="text" name="inputPass" id="medLoc" />
+                <label for="division">看診科別名稱</label>
+                <input type="text" name="division" id="division" />
+                <label for="docname">醫生姓名</label>
+                <input type="text" name="docname" id="docName" />
+                <label for="medcontent">看診內容</label>
+                <textarea type="medcontent" name="medcontent" id="medContent" ></textarea>
 
-                    <tr>
-                        <td>
-                            <label for="inputPass">就醫地點</label>
-                        </td>
-                        <td>
-                            <input type="number" name="inputPass" id="inputPass" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="inputNumber">看診科別名稱</label>
-                        </td>
-                        <td>
-                            <input type="number" name="inputNumber" id="inputNumber" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="inputEmail">醫生姓名</label>
-                        </td>
-                        <td>
-                            <input type="number" name="inputEmail" id="inputEmail" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="inputUrl">看診內容</label>
-                        </td>
-                        <td>
-                            <input type="number" name="inputUrl" id="inputUrl" />
-                        </td>
-                    </tr>
-                </table>
-                <a href="#med_rec">  <input type="submit" name="button1" id="button1" data-inline="true" value="送出"> </a>
-                <input type="reset" name="button2" id="button2" data-inline="true" value="重設">
+                <input type="submit" name="submit" id="button1" data-inline="true" value="送出">
+                <input type="reset" name="reset" id="button2" data-inline="true" value="重設" onclick="resetForm()">
             </form>
         </div>
-        <div data-role="footer" data-position="fixed">
-            <h4>HomeCare</h4>
-        </div>
+        <!--<div data-role="footer" data-position="fixed">
+            <h4 style="text-transform:capitalize">HomeCare</h4>
+        </div>-->
     </div>
 </body>
 </html>

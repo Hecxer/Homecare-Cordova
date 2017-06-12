@@ -3,22 +3,21 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-    <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
     <title>推播設定</title>
-
-    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
-
+    <link href="css/hc_theme.css" rel="stylesheet" />
+    <link href="css/jquery.mobile.icons-1.4.5.min.css" rel="stylesheet" />
     <script src="scripts/jquery-1.8.0.min.js"></script>
     <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    <script src="scripts/hc_javascript.js"></script>
 </head>
 <body>
-    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
-    <script type="text/javascript" src="scripts/appBundle.js"></script>
     <div data-role="page" id="broadcastSetting">
         <div data-role="header" data-position="fixed">
-            <a href="home.html"><img type="button" src="images/back.png" style="width:30px;height:25px;" /></a>
+            <a href="home.html"><i class="material-icons">arrow_back</i></a>
             <h1>推播設定</h1>
         </div>
         <div role="main" class="ui-content">
@@ -59,7 +58,7 @@
             <div data-role="navbar">
                 <ul>
                     <li>
-                        <a href="#alert3" data-rel="popup" data-position-to="window" 
+                        <a href="#alert3" data-rel="popup" data-position-to="window"
                            data-transition="fade">
                             <p>更新設定</p>
                         </a>
@@ -68,6 +67,5 @@
             </div>
         </div>
     </div>
-
 </body>
 </html>

@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
     <title>自我檢測</title>
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
     <link href="css/hc_theme.css" rel="stylesheet" />
     <link href="css/jquery.mobile.icons-1.4.5.min.css" rel="stylesheet" />
@@ -80,16 +80,11 @@
             </label>
             <input type="checkbox" name="checkbox-enhanced" id="agreement" data-enhanced="true" >
         </div>
-        <!--<div data-role="footer" style="text-align:center">
-            
 
-                <input type="checkbox" id="agree" name="agree" value="1">
-                <label for="agree">我已經詳細閱讀並且同意[個人資料保護說明]</label>
-                <a href="#testSelect" data-role="button">送出</a>
-     
-        </div>
-        <a href="#testSelect" data-role="button">送出</a>-->
-        <a href="#" data-role="button" onclick=isAgree()>送出</a>
+        <a href="#" data-role="button" onclick="isAgree()">送出</a>
+        <!--<!--<a href="#" data-role="button" id="agrSubmit">送出</a>-->
+        
+        <!--<button id="agrSubmit" onclick="">Submit</button>-->
     </div>
 
     <!---長照評估選擇--->
@@ -552,7 +547,7 @@
     <!---------AD8-->
 
     <div data-role="page" id="AD8">
-        <div data-role="header" style="background-color:">
+        <div data-role="header">
 
             <a href="#testSelect">返回</a>
 
